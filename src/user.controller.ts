@@ -138,7 +138,7 @@
 //   }
 // }
 
-//////////////////////     lec -7 /////////////////////
+//////////////////////     lec -7     /////////////////////
 
 
 // import { Body, Controller, Post, Put } from "@nestjs/common";
@@ -242,17 +242,41 @@
 ///////////////////// lec 9 ///////////////////////////
 
 
-import { Controller, Get, HostParam, Ip } from "@nestjs/common";
+// import { Controller, Get, HostParam, Ip } from "@nestjs/common";
 
-@Controller({path : "/users"})
-export class UsersController {
-  @Get("ip")
-  findIp(@Ip() ip: string) {
-    return { ip };
-  }
-  @Get()
-  getuser(@HostParam('domain') params : Record<string,any>)
-  {
-    return 'helloworld'
-  }
-}
+// @Controller({path : "/users", host : ':app:domain.com'})
+// export class UsersController {
+//   @Get("ip")
+//   findIp(@Ip() ip: string) {
+//     return { ip };
+//   }
+//   @Get()
+//   getuser(@HostParam('domain') params : Record<string,any>)
+//   {
+//     return 'helloworld'
+//   }
+// }
+
+
+//////////////////////// lec 10 ////////////////////////
+
+//////////////////// theory of dependency injection /////////////////////
+
+
+
+/////////////////// lec -13 ///////////////
+
+
+
+// import { Controller, Inject } from "@nestjs/common";
+
+// @Controller("users")
+// export class UsersController {
+//   constructor(
+//     @Inject("DATABASE_CONNECTION") private dbConn: Record<string, any>
+//   ) {
+//     console.log("Inside [UsersController]");
+
+//     console.log("Database connection", this.dbConn);
+//   }
+// }
